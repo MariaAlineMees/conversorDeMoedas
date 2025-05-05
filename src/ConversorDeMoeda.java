@@ -14,8 +14,18 @@ public class ConversorDeMoeda {
 
         HttpClient cliente = HttpClient.newHttpClient();
 
+        final String apiKey = System.getenv("EXCHANGE_API_KEY");
 
-        String url = String.format("https://v6.exchangerate-api.com/v6/05f3ec165dd6b10837bf9780/pair/%s/%s", origem, destino);
+        if (apiKey == null) {
+            System.err.println("Erro: variável de ambiente EXCHANGE_API_KEY não encontrada.");
+            return 0;
+        }
+
+        String url = String.format("https://v6.exchangerate-api.com/v6/%s/pair/%s/%s", apiKey, origem, destino);
+        System.out.println("URL segura: " + url);
+
+
+        //String url = String.format("https://v6.exchangerate-api.com/v6//pair/%s/%s", origem, destino);
 
 
 

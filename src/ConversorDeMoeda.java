@@ -25,9 +25,7 @@ public class ConversorDeMoeda {
         System.out.println("URL segura: " + url);
 
 
-        //String url = String.format("https://v6.exchangerate-api.com/v6//pair/%s/%s", origem, destino);
-
-
+        //Chave API retirada por seguranca!
 
 
         HttpRequest requisicao = HttpRequest.newBuilder()
